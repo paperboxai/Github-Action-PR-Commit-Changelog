@@ -1,0 +1,14 @@
+name: 'Commit Changelog'
+description: 'GitHub Action that generates a commit changelog'
+author: 'Paperbox'
+runs:
+  using: 'node12'
+  main: 'index.js'
+inputs:
+  github_token:
+    description: 'The GITHUB_TOKEN secret'
+    required: true
+
+branding:
+  icon: git-pull-request
+  color: green
