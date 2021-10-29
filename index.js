@@ -60,10 +60,11 @@ async function execute(context) {
       (commit) => !/^Merge pull request #\d+ /.test(commit.commit.message)
     )
     .map((commit) => {
+      commitMsg = commit.commit.message.replace("@", "\\@");
       if(commit.author == undefined || commit.author == null){
-        return `* ${commit.commit.message} \\@External (${commit.sha})`;
+        return `* ${commitMsg} \\@External (${commit.sha})`;
       }
-      return `* ${commit.commit.message} @${commit.author.login} (${commit.sha})`;
+      return `* ${commitMsg} @${commit.author.login} (${commit.sha})`;
     })
     .join("\n");
 
