@@ -2,7 +2,7 @@ name: 'Commit Changelog'
 description: 'GitHub Action that generates a commit changelog'
 author: 'Paperbox'
 runs:
-  using: 'node12'
+  using: 'node16'
   main: 'index.js'
 inputs:
   github_token:
